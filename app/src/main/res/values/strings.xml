@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">InternshipAssignment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="requests">Requests</string>
+    <string name="offerings">Offerings</string>
+    <string name="recommends">Recommends</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="invite_more_friends">Invite More Friends</string>
+    <string name="other_settings">Other Settings</string>
+    <string name="you_don_t_have_any_offerings_yet">You don\'t have any offerings yet</string>
+    <string name="you_don_t_have_any_recommendations_yet">You don\'t have any recommendations yet</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="looking_for">Looking for</string>
+</resources>

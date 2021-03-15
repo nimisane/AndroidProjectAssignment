@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="238dp"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/black_shade"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="409dp"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/black_shade"
+                    android:padding="15dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/profile_settings"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp"
+                    app:layout_anchorGravity="top|center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top_guideline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_user_profile_foreground"
+                    app:civ_border_color="@android:color/holo_orange_dark"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_guideline" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertical_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.4" />
+
+                <Button
+                    android:id="@+id/invite_friends_btn"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:minWidth="0dp"
+                    android:background="@drawable/rounded_btn"
+                    android:text="@string/invite_more_friends"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/top_guideline" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontal_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.65" />
+
+                <Button
+                    android:id="@+id/other_settings_btn"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:minWidth="0dp"
+                    android:background="@drawable/rounded_btn"
+                    android:text="@string/other_settings"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                    app:layout_constraintTop_toBottomOf="@id/horizontal_guideline" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                style="@style/ThemeOverlay.App.TabLayout"
+                app:tabTextAppearance="@style/CustomTextAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:background="@color/lighter_gray"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/view_pager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabMode="fixed"
+                app:tabPaddingBottom="8dp"
+                app:tabPaddingTop="15dp">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:fab_addButtonColorNormal="@color/black_shade"
+        app:fab_addButtonColorPressed="@android:color/darker_gray"
+        app:fab_labelStyle="@style/menu_labels_style"
+        app:fab_labelsPosition="left"
+        app:fab_addButtonPlusIconColor="@android:color/holo_orange_dark">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/request_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_request_foreground"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="@string/looking_for"
+            app:fab_colorPressed="@color/light_gray"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/offering_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_offering_foreground"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="@string/offerings"
+            app:fab_colorPressed="@color/light_gray"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/recommend_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_icon="@drawable/ic_recommend_foreground"
+            app:fab_title="@string/recommendations"
+            app:fab_colorPressed="@color/light_gray"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

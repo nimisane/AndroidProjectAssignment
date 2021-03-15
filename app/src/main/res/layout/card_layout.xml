@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    android:background="@android:color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+
+        <ImageView
+            android:id="@+id/user_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/ic_round_user_profile_foreground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"
+            />
+
+        <TextView
+            android:id="@+id/name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:padding="10dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/date_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Time"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/delete_option"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="&#8942;"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/purpose_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="Looking For:"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/name_textview"
+            />
+
+        <TextView
+            android:id="@+id/purpose_details_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="App Developer Job"
+            app:layout_constraintTop_toBottomOf="@id/name_textview"
+            app:layout_constraintStart_toEndOf="@id/purpose_textview"
+            />
+
+        <TextView
+            android:id="@+id/location_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location: "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/purpose_textview"
+            />
+
+        <TextView
+            android:id="@+id/user_location_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:text="Mumbai"
+            app:layout_constraintTop_toBottomOf="@id/purpose_details_textview"
+            app:layout_constraintStart_toEndOf="@id/location_textview"
+            />
+
+        <TextView
+            android:id="@+id/description_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I am looking for Android Development Job"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/location_textview"
+            />
+
+        <ImageView
+            android:id="@+id/comments_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_comment_24"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:paddingBottom="15dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintTop_toBottomOf="@id/description_textview"
+            app:layout_constraintEnd_toStartOf="@id/comments_textview"
+            />
+
+        <TextView
+            android:id="@+id/comments_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Comments"
+            android:textSize="15sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:paddingBottom="15dp"
+            app:layout_constraintStart_toEndOf="@id/comments_icon"
+            app:layout_constraintTop_toBottomOf="@id/description_textview"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
